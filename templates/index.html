@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate AI</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #dbeafe, #e0e7ff, #fce7f3);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 42px;
+        }
+
+        .student-info {
+            color: #6b7280;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .subtitle {
+            color: #374151;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            min-width: 250px;
+            padding: 14px 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        }
+
+        button {
+            padding: 14px 22px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background: #f8fafc;
+            border-left: 6px solid #2563eb;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: left;
+        }
+
+        .result-title {
+            color: #1e3a8a;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .result-text {
+            color: #374151;
+            font-size: 16px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .footer-note {
+            margin-top: 25px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>StudyMate AI</h1>
+        <div class="student-info">Habiba Abdelmonem - 60303744 - Dana saad alremaihi - 60301807
+        </div>
+        <p class="subtitle">Enter any topic and get a simple AI explanation.</p>
+
+        <form method="POST">
+            <input type="text" name="topic" placeholder="Enter topic here..." required>
+            <button type="submit">Explain</button>
+        </form>
+
+        {% if response %}
+        <div class="result-box">
+            <div class="result-title">AI Response</div>
+            <div class="result-text">{{ response }}</div>
+        </div>
+        {% endif %}
+
+
+    </div>
+</body>
+</html>
